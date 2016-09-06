@@ -1,25 +1,20 @@
 package sample1;
 
+import java.time.LocalDate;
+
 /**
  * Created by kakizoewataru on 2016/09/06.
  */
 public class Sales2 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        int [] records;
-        records = new int [3];
-        records[0] = 65000;
-        records[1] = 73000;
-        records[2] = 90000;
-        int total;
-        int average;
-        String date = "** 2010/04/01 **";
+        int[] records = {65000, 73000, 90000};            //訂正_配列プログラム一行
+        int total = records[0] + records[1] + records[2]; //訂正_total = records ...
+        int average = total / 3;                          //訂正_average = total / 3
+        LocalDate date = LocalDate.now();
 
-        total = records[0] + records[1] + records[2];
-        average = total / 3;
-
-        System.out.println("" +date);
-        System.out.println("合計 : " +total);
-        System.out.println("平均 : " +average);
+        System.out.println(date);                         //訂正_date <= コメント出力削除
+        System.out.println("合計 : " + total);
+        System.out.println("平均 : " + average);
     }
 }
