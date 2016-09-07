@@ -1,39 +1,28 @@
 package sample1;
 
+import java.time.LocalDate;
+
 /**
  * Created by kakizoewataru on 2016/09/06.
  */
 public class Sales4 {
     public static int total;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        int [] records;
-        records = new int [4];
-        records[0] = 0;
-        records[1] = 65000;
-        records[2] = 73000;
-        records[3] = 90000;
+        int[] records = {65000, 73000, 90000};                 //訂正_ 0削除と配列コードの修正
 
-        String date = "** 2010/04/01 **";
+        LocalDate date = LocalDate.now();
 
-        for(int i = 0 ; i <= 2 ; i++){
-            if(i == 0){
-                System.out.println("[0] total => " +records[0]);
-            }
-            if(i == 1){
-                System.out.println("[1] total => " +records[1]);
-            }
-            if(i == 2){
-                System.out.println("[2] total => " +(records[1]+records[2]));
-            }
+        for (int i = 0; i < 3; i++) {
+            total += records[i];
+            System.out.println("[" +i +"] total => " +total);  //訂正_
         }
 
-        total = records[1] + records[2] + records[3];
-        System.out.println("" +date);
+        System.out.println(date);
         System.out.println("合計 : " +total);
 
-        getAverage ();
+        getAverage();
     }
 
     public static void getAverage(){
